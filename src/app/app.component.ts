@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DataSharingService } from './data-sharing.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'subject-n-Behaviour-subject';
+  constructor(private behaviorSubject : DataSharingService){
+    this.behaviorSubject.subject.next('aaa');
+  }
 }
